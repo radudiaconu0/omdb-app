@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import SearchResults from "../views/SearchResults.vue";
 import MovieDetail from "../views/MovieDetail.vue";
 
+
+
 const routes = [
   {
     path: "/",

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@m-media/vue3-meta-tags": "^0.0.4",
     "@vueuse/core": "^10.1.2",
     "axios": "^1.4.0",
     "dotenv": "^16.0.3",

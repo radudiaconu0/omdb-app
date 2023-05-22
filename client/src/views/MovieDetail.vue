@@ -6,6 +6,7 @@ import { Icon } from '@iconify/vue';
 import { useMovieStore } from '../store/movie';
 import LoadingSpinner from '../components/LoadingSpinner.vue';
 import { watch } from 'vue';
+import { setTitle } from '@m-media/vue3-meta-tags';
 
 const router = useRoute();
 const loading = ref(false);
@@ -17,6 +18,7 @@ const fetchCurrentMovie = async () => {
   await store.fetchMovieDetails(id.value);
   movieData.value = store.currentMovie;
   loading.value = false;
+  setTitle(`${movieData.value.Title} (${movieData.value.Year})`);
 }
 onMounted(async () => {
   fetchCurrentMovie();

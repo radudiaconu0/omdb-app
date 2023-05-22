@@ -6,6 +6,7 @@ import { useRouter } from "vue-router";
 import { Movie } from '../interfaces/Movie';
 import { SearchInput } from '../interfaces/SearchInput';
 import { onKeyStroke } from '@vueuse/core'
+import { setTitle } from '@m-media/vue3-meta-tags';
 
 const movieStore = useMovieStore();
 const router = useRouter();
@@ -54,6 +55,7 @@ const onSearchClick = async () => {
 
   try {
     await movieStore.fetchMoviesBySearchParams();
+    setTitle('Search Results - ' + movieStore.searchParams.title);
     await router.push({ name: 'Home' });
   } catch (error) {
     console.error(error);
