@@ -46,7 +46,6 @@ const selectSearchItem = (item: Movie) => {
 const onSearchClick = async () => {
   if (!isValidYear(searchParams.year) && searchParams.year !== '') {
     alert('Invalid year');
-    console.error('Invalid year');
     return;
   }
 
@@ -69,7 +68,6 @@ onKeyStroke('ArrowDown', async () => {
   if (currentIndex.value < movieStore.autocompleteResults.length - 1) {
     currentIndex.value++;
   }
-  console.log(currentIndex.value);
   await nextTick();
   resultsList.value?.children[currentIndex.value]?.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }, { target: searchBox, dedupe: false });
@@ -78,7 +76,6 @@ onKeyStroke('ArrowUp', async () => {
   if (currentIndex.value > 0) {
     currentIndex.value--;
   }
-  console.log(currentIndex.value);
   await nextTick();
   resultsList.value?.children[currentIndex.value]?.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }, { target: searchBox, dedupe: false });
@@ -87,7 +84,6 @@ onKeyStroke('Enter', async () => {
   if (currentIndex.value > -1) {
     selectSearchItem(movieStore.autocompleteResults[currentIndex.value]);
   }
-  console.log(currentIndex.value);
   await nextTick();
   resultsList.value?.children[currentIndex.value]?.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }, { target: searchBox, dedupe: false });
