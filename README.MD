@@ -73,6 +73,22 @@ Replace your_backend_url with your actual backend url.
 npm run dev
 ```
 
+or
+
+```bash
+yarn dev
+```
+
+## Usage
+
+1. Open your browser and navigate to http://localhost:5173
+2. Enter a search term in the search box and results will be shown while you type
+3. Click on a result to view the details of the movie
+4. If you click on serch button the results will be displayed in the page paginated
+5. You can also use the pagination buttons to navigate through the pages
+6. You can filter the results by type and year
+7. You can view details of a movie by clicking on the movie title or the view details button
+
 
 
 
