@@ -1,9 +1,5 @@
 # OMDB Search Appplication
 
-## Description
-
-Insert a brief description of your project here.
-
 ## Setup
 
 ### Prerequisites

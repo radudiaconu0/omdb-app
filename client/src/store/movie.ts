@@ -42,7 +42,6 @@ export const useMovieStore = defineStore({
       } as SearchParams;
       const response = await searchMovies(params);
       this.autocompleteResults = response.Search;
-      this.totalResults = response.totalResults;
     },
     async fetchMoviesBySearchParams() {
       const params = {
