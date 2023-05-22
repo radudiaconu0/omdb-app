@@ -67,6 +67,7 @@ const currentIndex = ref(-1);
 const resultsList = ref<HTMLUListElement>();
 
 onKeyStroke('ArrowDown', async () => {
+  console.log(currentIndex.value);
   if (currentIndex.value < movieStore.autocompleteResults.length - 1) {
     currentIndex.value++;
   }
@@ -123,9 +124,10 @@ watch(searchParams, () => {
       role="menu" v-if="movieStore.autocompleteResults?.length > 0">
       <ul class="flex flex-col w-full overflow-y-scroll h-auto" ref="resultsList">
         <li
-          class="flex items-center dark:bg-gray-700 dark:text-white px-3 py-2 rounded-md transition-colors duration-200 ease-in-out hover:bg-gray-600"
+          class="flex items-center dark:text-white px-3 py-2 rounded-md transition-colors duration-200 ease-in-out hover:bg-gray-600"
           v-for="(item, key) in movieStore.autocompleteResults" :key="key" @click="selectSearchItem(item)"
-          :class="{ 'dark:bg-gray-600': currentIndex == key }">
+          :class="currentIndex == key ? 'dark:bg-gray-500' : 'dark:bg-gray-700'"
+          >
           <img class="w-16 h-24 rounded-md object-cover mr-4" :src="item.Poster" :alt="item.Title" />
           <span v-html="highlightText(sanitizeHTML(item.Title), searchParams.title)"></span>
         </li>
