@@ -1,4 +1,4 @@
-import axios from "../axios"; // Your axios configuration file
+import axios from "../axios";
 import { SearchParams } from "../interfaces/SearchParams";
 
 export async function getMovies(): Promise<any> {

@@ -67,7 +67,6 @@ const currentIndex = ref(-1);
 const resultsList = ref<HTMLUListElement>();
 
 onKeyStroke('ArrowDown', async () => {
-  console.log(currentIndex.value);
   if (currentIndex.value < movieStore.autocompleteResults.length - 1) {
     currentIndex.value++;
   }
@@ -91,7 +90,6 @@ onKeyStroke('Enter', async () => {
   resultsList.value?.children[currentIndex.value]?.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }, { target: searchBox, dedupe: false });
 
-// Reset currentIndex when searchParams change
 watch(searchParams, () => {
   currentIndex.value = -1
 });
