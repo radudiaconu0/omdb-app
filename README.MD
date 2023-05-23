@@ -9,6 +9,10 @@ You will need the following tools:
 - Node.js >= 18
 - NPM/Yarn
 - Your preferred text editor or IDE (e.g., Visual Studio Code)
+- nodemon installed 
+```bash
+npm install -g nodemon
+```
 
 ### Backend
 
